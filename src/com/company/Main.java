@@ -100,7 +100,7 @@ public class Main {
                             System.out.println("Enter the number of copy you want to load;");
                             Scanner scanner5 = new Scanner(System.in);
                             String chosenCopy = scanner5.nextLine();
-                            if (Integer.parseInt(chosenCopy) < reserveFiles.length) {
+                            if (Integer.parseInt(chosenCopy) < reserveFiles.length && Integer.parseInt(chosenCopy) >= 0 ) {
                                 generalTrinagle.load(reserveFiles[Integer.parseInt(chosenCopy)]);
                                 System.out.println(generalTrinagle);
                             }
