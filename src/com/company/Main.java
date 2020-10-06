@@ -100,8 +100,12 @@ public class Main {
                             System.out.println("Enter the number of copy you want to load;");
                             Scanner scanner5 = new Scanner(System.in);
                             String chosenCopy = scanner5.nextLine();
-                            generalTrinagle.load(reserveFiles[Integer.parseInt(chosenCopy)]);
-                            System.out.println(generalTrinagle);
+                            if (Integer.parseInt(chosenCopy) < reserveFiles.length) {
+                                generalTrinagle.load(reserveFiles[Integer.parseInt(chosenCopy)]);
+                                System.out.println(generalTrinagle);
+                            }
+                            else
+                                System.out.println("Error.");
                         }
                         else
                             System.out.println("There are no backups in the folder.");
