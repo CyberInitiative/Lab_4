@@ -113,7 +113,7 @@ public class TriangleDB implements IArray, Serializable {
 
     public void JKSerialize(String filename) throws IOException {
         ObjectMapper objectMapperList = new ObjectMapper();
-        objectMapperList.writeValue(new File(System.getProperty("java.io.tmpdir") + "\\IdeaProjects\\Lab3\\Triangles_Json_Reserve.json"), this);
+        objectMapperList.writeValue(new File(filename), this);
     }
 
     public void JKDeserialize(String filename) throws IOException {

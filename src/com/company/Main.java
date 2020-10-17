@@ -40,7 +40,9 @@ public class Main {
 
                 if (!generalTriangle.trianglesList.isEmpty()) {
                     generalTriangle.serialize(FilePath + "\\Initial_Triangles_Reserve_Serialize" + formatter.format(date) + ".txt");
-                    System.out.println("Reserve copy for general triangles has been created;");
+                    System.out.println("Initial reserve serialization for triangles has been created;");
+                    generalTriangle.JKSerialize(FilePath + "\\Initial_Triangles_JSON_Reserve_Serialize" + formatter.format(date) + ".json");
+                    System.out.println("Initial reserve JSON serialization for triangles has been created;");
                 }
 
                 generalTriangle.trianglesList.removeIf(triangle -> !triangle.check_existence());
@@ -82,14 +84,16 @@ public class Main {
                         System.out.println(equilateral_triangles.equilTrianglesList.indexOf(equilateralTriangle) + ex.getMessage());
                     }
                 }
-
-                generalTriangle.serialize(FilePath + "\\Finite_Triangles_Reserve_Serialize.txt" + formatter.format(date) + ".txt");
+                System.out.println("Finite reserve serialization for triangles has been created;");
+                generalTriangle.serialize(FilePath + "\\Finite_Triangles_Reserve_Serialize" + formatter.format(date) + ".txt");
+                System.out.println("Finite JSON reserve serialization for triangles has been created;");
+                generalTriangle.JKSerialize(FilePath + "\\Finite_Triangles_JSON_Reserve_Serialize" + formatter.format(date) + ".json");
                 break;
             case "N":
                 File directory = new File(FilePath);
                 String[] reserveFiles = directory.list(new FilenameFilter() {
                     public boolean accept(File dir, String name) {
-                        return name.endsWith(".txt");
+                        return name.contains("Reserve");
                     }
                 });
                 if (reserveFiles != null && reserveFiles.length > 0) {
@@ -101,7 +105,12 @@ public class Main {
                     Scanner scanner1 = new Scanner(System.in);
                     String chosenCopy = scanner1.nextLine();
                     if (Integer.parseInt(chosenCopy) < reserveFiles.length && Integer.parseInt(chosenCopy) >= 0) {
-                        generalTriangle.deserialize(FilePath + "\\" + reserveFiles[Integer.parseInt(chosenCopy)]);
+                        if(reserveFiles[Integer.parseInt(chosenCopy)].endsWith(".txt")) {
+                            generalTriangle.deserialize(FilePath + "\\" + reserveFiles[Integer.parseInt(chosenCopy)]);
+                        }
+                        if(reserveFiles[Integer.parseInt(chosenCopy)].endsWith(".json")) {
+                            generalTriangle.JKDeserialize(FilePath + "\\" + reserveFiles[Integer.parseInt(chosenCopy)]);
+                        }
                         System.out.println(generalTriangle);
                     } else
                         System.out.println("Error.");
