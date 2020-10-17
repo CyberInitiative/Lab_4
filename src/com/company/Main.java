@@ -27,7 +27,7 @@ public class Main {
         switch (chosenVariant1) {
             case "Y":
                 generalTriangle.add(0, 2, 4, 0, 0, -3);
-                generalTriangle.add(1, 1, 4, 4, 0, 0); //does not exist
+                generalTriangle.add(1, 1, 4, 4, 0, 0);
                 generalTriangle.add(-2, 3, 2, -3, -5.19615, -3.4641); // equilateral_triangle
                 generalTriangle.add(0, 5, 0, 0, -2, 0);
                 generalTriangle.add(-6, 0, 0, 0, -3, -5.19615); // equilateral_triangle
@@ -35,7 +35,7 @@ public class Main {
                 generalTriangle.add(0, 2, 4, 0, 0, -3);
                 generalTriangle.add(1, 1, 3, 3, 0, 0); //does not exist
                 generalTriangle.add(0, 6, 4, 0, -5, 0);
-                generalTriangle.add(1, 1, 4, 4, 0, 0); //does not exist
+                generalTriangle.add(1, 1, 4, 4, 0, 0);
                 generalTriangle.add(1, 1, 2, 2, 0, 0); //does not exist
 
                 if (!generalTriangle.trianglesList.isEmpty()) {
