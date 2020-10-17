@@ -15,9 +15,9 @@ public interface IArray {
 
     void load(String filename) throws IOException;
 
-    void serialize(String filename);
+    //void serialize(String filename);
 
-    void deserialize(String filename);
+    //void deserialize(String filename);
 
     //void JKSerialize (String filename) throws IOException;
 

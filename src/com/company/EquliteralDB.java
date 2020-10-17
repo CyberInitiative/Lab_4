@@ -84,7 +84,7 @@ public class EquliteralDB implements IArray, Serializable {
         }
         scanner.close();
     }
-
+/*
     public void serialize(String filename) {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(filename);
@@ -110,7 +110,7 @@ public class EquliteralDB implements IArray, Serializable {
             System.out.println("Equilateral triangle class not found");
         }
     }
-/*
+
     public void JKSerialize (String filename) throws IOException{
         ObjectMapper objectMapperList = new ObjectMapper();
         objectMapperList.writeValue(new File(System.getProperty("java.io.tmpdir") + "\\IdeaProjects\\Lab3\\eq_triangles_Reserve.json"), this);

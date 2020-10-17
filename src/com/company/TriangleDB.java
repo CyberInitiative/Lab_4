@@ -107,7 +107,7 @@ public class TriangleDB implements IArray, Serializable {
         } catch (IOException exception) {
             exception.printStackTrace();
         } catch (ClassNotFoundException classNotFoundException) {
-            System.out.println("Trinagle class not found");
+            System.out.println("Triangle class not found");
         }
     }
 
