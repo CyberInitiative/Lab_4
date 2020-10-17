@@ -1,11 +1,14 @@
 package com.company;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 
-public class Triangle implements ITriangle {
+public class Triangle implements ITriangle, Serializable {
     protected Point point_one;
     protected Point point_two;
     protected Point point_three;
+
+    public Triangle(){}
 
     public Triangle(double x1, double y1, double x2, double y2, double x3, double y3) {
         point_one = new Point(x1, y1);
@@ -14,9 +17,9 @@ public class Triangle implements ITriangle {
     }
 
     public Triangle(Point pointOne, Point pointTwo, Point pointThree) {
-        point_one = pointOne;
-        point_two = pointTwo;
-        point_three = pointThree;
+        this.point_one = pointOne;
+        this.point_two = pointTwo;
+        this.point_three = pointThree;
     }
 
     public Point getPoint_one() {

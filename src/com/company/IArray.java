@@ -14,4 +14,12 @@ public interface IArray {
     void save(String filename) throws IOException;
 
     void load(String filename) throws IOException;
+
+    void serialize(String filename);
+
+    void deserialize(String filename);
+
+    //void JKSerialize (String filename) throws IOException;
+
+    //void JKDeserialize(String filename) throws IOException;
 }
